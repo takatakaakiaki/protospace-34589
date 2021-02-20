@@ -1,0 +1,13 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは, 
+        <%= link_to "#{current_user.id}", user_path(@prototypes), class: :greeting__link %>
+      </div>
+      <div class="card__wrapper">
+        <%= render partial: "prototype", collection: @prototypes, class: :card__wrapper %>
+      </div>
+    <% end %> 
+  </div>
+</main>
